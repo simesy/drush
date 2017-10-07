@@ -118,7 +118,7 @@
 #
 # Drush also supports *remote* site aliases.  When a site alias is
 # defined for a remote site, Drush will use the ssh command to run
-# the requested command on the remote machine.  The simplest remote
+# the requested command on the remote machine.  An example remote
 # alias looks like this:
 #
 # @code
@@ -128,6 +128,8 @@
 #   user: www-admin
 #   root: /other/path/to/drupal
 #   uri: http://example.com
+#   paths:
+#     drush-script: /usr/local/bin/drush
 # @endcode
 #
 # The built-in alias "@none" represents the state of no Drupal site;
@@ -166,6 +168,7 @@
 #   Relative aliases are always taken from the Drupal root.
 #   - 'files': Path to 'files' directory.  This will be looked up if not
 #     specified.
+#   - 'drush-script': Path to the Drush script to run in remote commands.
 # - 'command': These options will only be set if the alias
 #   is used with the specified command.  In the example below, the option
 #   `--no-dump` will be selected whenever the @stage alias
