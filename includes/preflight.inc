@@ -229,6 +229,9 @@ function drush_preflight() {
 
   // Set up base environment for system-wide file locations.
   _drush_preflight_base_environment();
+  
+  // Project specific settings.
+  drush_load_config_file('project', ['.drushrc.php']);
 
   // Setup global alias_paths[] in context system.
   if (!drush_get_option('local')) {
